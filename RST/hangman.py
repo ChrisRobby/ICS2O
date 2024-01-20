@@ -20,4 +20,3 @@ def startgame(maxLives):
     ## return result
     return WIN
 
-
