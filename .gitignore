@@ -1,0 +1,4 @@
+# ignore the following python files
+__pycache__/
+*.py[cod]
+*$py.class
