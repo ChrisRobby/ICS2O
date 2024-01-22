@@ -1,7 +1,7 @@
 # The main hangman program
 import random
 
-# The maximum number of lives 
+# The maximum number of lives
 MAX_LIVES = 10
 
 # return values for the start game function
@@ -72,7 +72,7 @@ def startgame(maxLives):
 
     guesses = ""
     guess = ""
-    while( lives > 0 ):
+    while lives > 0:
 
         guess = input("enter your guess (a-z): ")
         # make sure guess is a letter
