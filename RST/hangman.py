@@ -56,7 +56,7 @@ def initGuessStr(phrase):
 def startgame(maxLives):
     lives = int(maxLives)
 
-    ## check maxLives .. must be at least 1 and less than max
+    # check maxLives .. must be at least 1 and less than max
     if lives < 1 or lives > MAX_LIVES:
         print("Error: maxLives not valid = %d\n" % lives)
         return ERROR
@@ -90,14 +90,14 @@ def startgame(maxLives):
         index = phrase.find(guess)
         if index != -1:
             while index != -1:
-                ## set the guessStr with the letter
+                # set the guessStr with the letter
                 tempStr = guessStr[0:index]
                 tempStr = tempStr + phrase[index]
                 tempStr = tempStr + guessStr[index + 1 : len(phrase)]
                 guessStr = tempStr
                 index = phrase.find(guess, index + 1)
         else:
-            ## wrong guess, lose a life
+            # wrong guess, lose a life
             lives = lives - 1
 
         print()
@@ -109,5 +109,5 @@ def startgame(maxLives):
             result = WIN
             break
 
-    ## return result
+    # return result
     return result
