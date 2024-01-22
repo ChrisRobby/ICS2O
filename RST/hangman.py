@@ -46,13 +46,50 @@ def startgame(maxLives):
     
     # get a random word
     phrase = getWordFromDictionary()
-    print(phrase)
     
     # initialze the guess array based on the phrase
     guessStr = initGuessStr(phrase)
     print(guessStr)
     
+    guesses = ""
+    guess = ""
+    while( lives > 0 ):
     
+        guess = input("enter your guess (a-z): ")
+        # make sure guess is a letter
+        if guess < 'a' or guess > 'z':
+            print( "Invalid, must be a-z")
+            continue
+        
+        # check to see if the letter was already guessed
+        if guesses.find(guess) == -1:
+            guesses = guesses + guess
+        else:
+            continue
+
+        # check if the guess is in the phrase
+        index = phrase.find(guess)
+        if index != -1 :
+            while index != -1:
+                ## set the guessStr with the letter
+                tempStr = guessStr[0:index]
+                tempStr = tempStr + phrase[index]
+                tempStr = tempStr + guessStr[index + 1:len(phrase)]
+                guessStr = tempStr
+                index = phrase.find(guess, index + 1)
+        else:
+            ## wrong guess, lose a life
+            lives = lives - 1
+
+        print()
+        print(guessStr)
+        print("Guesses = ", guesses)
+        print("Lives = ", lives)
+        
+        if guessStr == phrase:
+            result = WIN
+            break
+            
     ## return result
     return result
 
