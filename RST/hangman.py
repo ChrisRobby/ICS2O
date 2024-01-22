@@ -32,6 +32,7 @@ dictionary = [
     "batman",
 ]
 
+
 # get a random word from the dictionary
 def getWordFromDictionary():
     length = len(dictionary)
